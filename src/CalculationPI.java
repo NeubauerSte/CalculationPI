@@ -20,33 +20,41 @@ public class CalculationPI {
         System.out.println(piWallProdukt(basis));
         System.out.println(piLeibnitzReihe(basis));
         System.out.println(piKelallurFormel(basis));
-
-
-
     }
 
     static String piWallProdukt(int basis){
-        String ausgabe="Das Ergebnis mit dem Wallprodukt für Pi mit der Basis "+basis+" lautet:\n";
+        int nenner=1;
+        int zaehler=0;
+        double pi = 1.0;
 
+        for (int i = 0; i <basis ; i++) {
+            if (i%2 == 0){ nenner= nenner+2; } else { zaehler = zaehler+2; }
 
+            pi = pi * zaehler/nenner * 2;
+        }
 
-
+        return "Das Ergebnis mit dem Wallprodukt für Pi mit der Basis "+basis+" lautet: "+pi+".";
     }
 
     static String piLeibnitzReihe(int basis){
-        String ausgabe="Das Ergebnis mit der Leibnitzreihe für Pi mit der Basis "+basis+" lautet:\n";
 
+        // Algorithmus
+
+        return "Das Ergebnis mit der Leibnitzreihe für Pi mit der Basis "+basis+" lautet:\n";
     }
 
     static String piKelallurFormel(int basis){
-        String ausgabe="Das Ergebnis mit der Kellalurformel für Pi mit der Basis "+basis+" lautet:\n";
 
+        // Algorithmus
+
+        return "Das Ergebnis mit der Kellalurformel für Pi mit der Basis "+basis+" lautet:\n";
     }
 
     static String piFormelEuler(int basis){
-        String ausgabe="Das Ergebnis mit der Formel von Euler für Pi mit der Basis "+basis+" lautet:\n";
 
+        // Algorithmus
 
+        return "Das Ergebnis mit der Formel von Euler für Pi mit der Basis "+basis+" lautet:\n";
     }
 
 
