@@ -35,17 +35,28 @@ public class Calculate {
     }
 
     static String piKelallurFormel(int basis){
-        double pi=1.0;
+        double pi=3.0;
+        double nenner=3.0;
 
         // Algorithmus Kellalurformel
+        for (int i = 0; i <basis ; i++) {
+            if (i % 2 == 0){
+            pi = pi + 4/((Math.pow(nenner, 3)) - nenner); }
+            else { pi = pi - 4/((nenner*nenner*nenner) - nenner); }
+
+            nenner=nenner+2;
+        }
 
         return "Das Ergebnis mit der Kellalurformel für Pi mit der Basis "+basis+" lautet: "+pi+".\n";
     }
 
     static String piFormelEuler(int basis){
         double pi=1.0;
+        double nenner=1;
 
         // Algorithmus Euler Formel
+        for (int i = 0; i <basis ; i++) { pi = pi + 1/(nenner*nenner); }
+        pi = Math.sqrt(pi*8);
 
         return "Das Ergebnis mit der Formel von Euler für Pi mit der Basis "+basis+" lautet: "+pi+".\n";
     }
