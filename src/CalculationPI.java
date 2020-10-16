@@ -15,15 +15,18 @@ public class CalculationPI {
         System.out.println("Wie oft soll multipliziert werden für PI?");
         int basis = sc.nextInt();
 
-        System.out.println(toString(basis));
+        CalculateAll calculateEuler = new CalculateEuler();
+        CalculateAll calculateKellalur = new CalculateKellalur();
+        CalculateAll calculateLeibnitz = new CalculateLeibnitz();
+        CalculateAll calculateWallprodukt = new CalculateWallprodukt();
+
+        System.out.println(calculateEuler.toString(basis));
+        System.out.println(calculateKellalur.toString(basis));
+        System.out.println(calculateLeibnitz.toString(basis));
+        System.out.println(calculateWallprodukt.toString(basis));
     }
 
-    public static String toString(int basis){
-        return Calculate.piFormelEuler(basis) +
-                Calculate.piLeibnitzReihe(basis) +
-                Calculate.piKelallurFormel(basis) +
-                Calculate.piWallProdukt(basis);
-    }
+
 
 
 }
