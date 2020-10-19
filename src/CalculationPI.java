@@ -7,13 +7,19 @@ Erstes Projekt mit Github und Git Bash
 --> Pi berechnen, ziemlich simpel, jedoch muss alles mit Git funktionieren.
  */
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalculationPI {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Wie oft soll multipliziert werden für PI?");
-        int basis = sc.nextInt();
+        int basis=0;
+
+        try { // Exceptionhandling
+            System.out.println("Wie oft soll multipliziert werden für PI?");
+            basis = sc.nextInt(); }
+        catch (InputMismatchException iem){ System.out.println("Bitte eine ZAHL angeben!"); System.exit(0); }
+
 
         CalculateAll calculateEuler = new CalculateEuler();
         CalculateAll calculateKellalur = new CalculateKellalur();
